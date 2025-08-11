@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Portfolio</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(90deg, #007BFF, #00BFFF);
+            padding: 1rem;
+            color: white;
+            text-align: center;
+        }
+        nav {
+            background: #0056b3;
+            padding: 0.5rem;
+            display: flex;
+            justify-content: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        .home-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+        }
+        .home-container img {
+            max-width: 250px;
+            border-radius: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        th {
+            background: #007BFF;
+            color: white;
+        }
+        .contact-links a {
+            display: inline-block;
+            margin-right: 1rem;
+            padding: 0.5rem 1rem;
+            background: #007BFF;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .contact-links a:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>My Professional Portfolio</h1>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#gantt">Gantt Chart</a>
+    <a href="#coaching">Coaching Toolkit</a>
+    <a href="#customer">Customer Toolkit</a>
+    <a href="#kpi">KPI & Budget</a>
+    <a href="#team">Team Leadership</a>
+    <a href="#ethics">Ethics & Culture</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="home" class="card">
+    <div class="home-container">
+        <img src="headshot.jpg" alt="Headshot">
+        <div>
+            <h2>Mission</h2>
+            <p>To deliver innovative solutions with excellence and integrity.</p>
+            <h3>Values</h3>
+            <ul>
+                <li>Integrity</li>
+                <li>Collaboration</li>
+                <li>Innovation</li>
+            </ul>
+            <h3>Goals</h3>
+            <ul>
+                <li>Enhance professional skills.</li>
+                <li>Lead impactful projects.</li>
+                <li>Drive organizational success.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="gantt" class="card">
+    <h2>15-Week Project Timeline</h2>
+    <div id="gantt_chart" style="width: 100%; height: 400px;"></div>
+</section>
+
+<section id="coaching" class="card">
+    <h2>Coaching & Communication Toolkit</h2>
+    <p>Guides and resources to enhance team communication and personal growth.</p>
+    <ul>
+        <li>Active listening techniques</li>
+        <li>Feedback frameworks</li>
+        <li>Conflict resolution methods</li>
+    </ul>
+</section>
+
+<section id="customer" class="card">
+    <h2>Customer Service & Incident Toolkit</h2>
+    <p>Strategies and tools to provide exceptional customer support and manage incidents effectively.</p>
+    <ul>
+        <li>Customer feedback loops</li>
+        <li>Incident escalation matrix</li>
+        <li>CRM integration guides</li>
+    </ul>
+</section>
+
+<section id="kpi" class="card">
+    <h2>KPI Dashboard & Mini Budget</h2>
+    <table>
+        <tr><th>KPI</th><th>Target</th><th>Status</th></tr>
+        <tr><td>Customer Satisfaction</td><td>90%</td><td>85%</td></tr>
+        <tr><td>Response Time</td><td>2 hrs</td><td>2.5 hrs</td></tr>
+    </table>
+    <h3>Mini Budget</h3>
+    <table>
+        <tr><th>Category</th><th>Planned</th><th>Actual</th></tr>
+        <tr><td>Marketing</td><td>$5,000</td><td>$4,800</td></tr>
+        <tr><td>Operations</td><td>$8,000</td><td>$8,200</td></tr>
+    </table>
+</section>
+
+<section id="team" class="card">
+    <h2>Team Leadership & HR Tools</h2>
+    <ul>
+        <li>Performance review templates</li>
+        <li>Recruitment process guides</li>
+        <li>Employee engagement surveys</li>
+    </ul>
+</section>
+
+<section id="ethics" class="card">
+    <h2>Ethics, Systems, and Culture</h2>
+    <p>Promoting ethical decision-making, robust systems, and a positive organizational culture.</p>
+</section>
+
+<section id="contact" class="card">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:yourname@example.com">yourname@example.com</a></p>
+    <div class="contact-links">
+        <a href="resume.pdf" target="_blank">Download Résumé</a>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+    </div>
+</section>
+
+<script type="text/javascript">
+    google.charts.load('current', {'packages':['gantt']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function daysToMilliseconds(days) {
+        return days * 24 * 60 * 60 * 1000;
+    }
+
+    function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Task ID');
+        data.addColumn('string', 'Task Name');
+        data.addColumn('string', 'Resource');
+        data.addColumn('date', 'Start Date');
+        data.addColumn('date', 'End Date');
+        data.addColumn('number', 'Duration');
+        data.addColumn('number', 'Percent Complete');
+        data.addColumn('string', 'Dependencies');
+
+        data.addRows([
+            ['1', 'Project Planning', 'Planning',
+             new Date(2025, 0, 6), new Date(2025, 0, 20), null, 100, null],
+            ['2', 'Design Phase', 'Design',
+             new Date(2025, 0, 21), new Date(2025, 1, 10), null, 80, '1'],
+            ['3', 'Development', 'Dev',
+             new Date(2025, 1, 11), new Date(2025, 3, 20), null, 50, '2'],
+            ['4', 'Testing', 'QA',
+             new Date(2025, 3, 21), new Date(2025, 4, 10), null, 30, '3'],
+            ['5', 'Deployment', 'Release',
+             new Date(2025, 4, 11), new Date(2025, 4, 25), null, 0, '4']
+        ]);
+
+        var options = {
+            height: 400,
+            gantt: {
+                trackHeight: 30
+            }
+        };
+
+        var chart = new google.visualization.Gantt(document.getElementById('gantt_chart'));
+        chart.draw(data, options);
+    }
+</script>
+
+</body>
+</html>
